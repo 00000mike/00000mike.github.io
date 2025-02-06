@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>输入名字</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: pink;
+            color: black;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        input {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .thermometer {
+            width: 20px;
+            height: 100px;
+            background-color: #ccc;
+            border-radius: 10px;
+            position: relative;
+            margin: 20px;
+        }
+        .liquid {
+            width: 100%;
+            background-color: red;
+            position: absolute;
+            bottom: 0;
+            transition: height 0.5s;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="name1" placeholder="输入第一个名字">
+    <input type="text" id="name2" placeholder="输入第二个名字">
+    <div class="thermometer">
+        <div class="liquid" id="liquid"></div>
+    </div>
+    <button onclick="window.location.href='page4.html'">测试</button>
+
+    <script>
+        const liquid = document.getElementById('liquid');
+        setInterval(() => {
+            const height = Math.random() * 100;
+            liquid.style.height = `${height}%`;
+        }, 500);
+    </script>
+</body>
+</html>
